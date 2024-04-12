@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{locale}}">
+
+<head>
+  {%- auth0:head -%}
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="stylesheet" href="https://use.typekit.net/zjs2kuv.css">
+
+  <link rel="stylesheet" href="https://mfc.fit/branding3.css">
+  <style>
+    #custom-prompt-logo {
+      background-image: url('https://mfc.fit/auth0.svg');
+     
+    }
+  </style>
+
+   <title>{{ prompt.screen.texts.pageTitle }}</title>
+   
+</head>
+
+  <body class="_widget-auto-layout _use-custom-prompt-logo">
+    <div class="prompt-wrapper">
+      <div class="empty"></div>
+      <div class="widget">{%- auth0:widget -%}</div>
+      <div class="child">
+        {% if prompt.name == "signup" or prompt.name == "signup-id" or
+        prompt.name == "signup-password" %}
+        <div>
+          By creating an account, you agree to our
+          <a href="#">Terms of Service</a> and
+          <a href="#">Privacy Policy.</a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="empty"></div>
+    </div>
+    <div class="bg"></div>
+    <footer class="footer">
+      <ul>
+        <li>
+          <a href="#">Help</a>
+        </li>
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#">Terms of Service</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+
+</html>
